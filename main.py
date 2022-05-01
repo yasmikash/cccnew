@@ -2,13 +2,11 @@ import os
 from pathlib import Path
 from werkzeug.utils import secure_filename
 from flask import Flask, request, jsonify
-from flask_cors import CORS
 import cough_rate_calculation
 import predict
 
 # define a flask app
 app = Flask(__name__)
-CORS(app)
 
 @app.route('/cough', methods=['POST'])
 def cough():
